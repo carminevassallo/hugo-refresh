@@ -130,12 +130,24 @@
                 {{ end }}
               </a>
             </li>
-            {{ end }}       
+            {{ end }} 
+            {{ if isset .Site.Params.footer.slideshare "link" }}
+            <li>
+              <a href="https://speakerdeck.com/{{ .Site.Params.footer.slideshare.link }}" target="_blank">
+                <span class="icon"><i class="fa fa-slideshare"></i></span>
+                {{ if isset .Site.Params.footer.slideshare "title" }}
+                  {{ .Site.Params.footer.slideshare.title }}
+                {{ else }}
+                  SlideShare
+                {{ end }}
+              </a>
+            </li>
+            {{ end }}
           </ul>
         </div>
       </div>
       {{ end }}
-
+        
       {{ if isset .Site.Params.footer "copyright" }}
       <div class="column">
         <div class="footer-column">
